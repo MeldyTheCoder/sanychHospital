@@ -1,0 +1,1 @@
+from .diagnoses_page import DiagnosesPage

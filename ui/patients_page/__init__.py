@@ -1,0 +1,1 @@
+from .patients_page import PatientsPage
