@@ -66,7 +66,7 @@ class DiagnosesPage(BasePage):
                     size=35,
                 ),
                 ft.Container(
-                    alignment=ft.alignment.center,
+                    alignment=ft.alignment.top_center,
                     content=ft.Tabs(
                         height=700,
                         tab_alignment=ft.TabAlignment.CENTER,
@@ -88,7 +88,7 @@ class DiagnosesPage(BasePage):
                                         alignment=ft.MainAxisAlignment.CENTER,
                                     ),
                                     margin=ft.Margin(top=20, bottom=0, left=0, right=0),
-                                    alignment=ft.alignment.center,
+                                    alignment=ft.alignment.top_center,
                                 ),
                                 text='Создать диагноз',
                                 icon=ft.icons.CREATE_OUTLINED,

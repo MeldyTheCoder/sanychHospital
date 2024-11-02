@@ -176,7 +176,7 @@ class AppointmentsPage(BasePage):
                                         alignment=ft.MainAxisAlignment.CENTER,
                                     ),
                                     margin=ft.Margin(top=20, bottom=0, left=0, right=0),
-                                    alignment=ft.alignment.center,
+                                    alignment=ft.alignment.top_center,
                                 ),
                                 text='Создать прием',
                                 icon=ft.icons.CREATE_OUTLINED,

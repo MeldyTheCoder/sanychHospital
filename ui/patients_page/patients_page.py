@@ -81,9 +81,9 @@ class PatientsPage(BasePage):
                     size=35,
                 ),
                 ft.Container(
-                    alignment=ft.alignment.center,
+                    alignment=ft.alignment.top_center,
                     content=ft.Tabs(
-                        height=700,
+                        height=600,
                         tab_alignment=ft.TabAlignment.CENTER,
                         tabs=[
                             ft.Tab(
@@ -103,7 +103,7 @@ class PatientsPage(BasePage):
                                         alignment=ft.MainAxisAlignment.CENTER,
                                     ),
                                     margin=ft.Margin(top=20, bottom=0, left=0, right=0),
-                                    alignment=ft.alignment.center,
+                                    alignment=ft.alignment.top_center,
                                 ),
                                 text='Добавить пациента',
                                 icon=ft.icons.CREATE_OUTLINED,

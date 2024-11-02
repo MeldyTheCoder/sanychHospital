@@ -3,7 +3,7 @@ import serializers
 from models import Patient, Passport, MedCard, Insurance
 
 
-async def create_patient(patient_data: serializers.PatientFormSerializer) -> Patient:
+async def create_patient(patient_data: serializers.PatientFormSerializer | dict) -> Patient:
     """
     Метод для создания пациента в системе со всеми привязанными документами.
     :param patient_data: Данные пациента

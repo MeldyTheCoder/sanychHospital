@@ -12,17 +12,33 @@ class Base(pydantic.BaseModel):
     """
 
 
-PassportSerializer = models.Passport.get_pydantic(
-    exclude={
-        'id',
-    }
-)
+class PassportFormSerializer(Base):
+    serial: int = pydantic.Field(
+        title="Серия паспорта"
+    )
+    number: int = pydantic.Field(
+        title="Номер паспорта"
+    )
+    issued_by: str = pydantic.Field(
+        title="Кем выдан"
+    )
+    issued_date: datetime.datetime = pydantic.Field(
+        title="Дата выдачи"
+    )
+    date_of_birth: datetime.datetime = pydantic.Field(
+        title="Дата рождения"
+    )
+    gender: bool = pydantic.Field(
+        title="Пол"
+    )
+    address: str = pydantic.Field(
+        title="Адрес проживания"
+    )
 
-InsuranceSerializer = models.Insurance.get_pydantic(
-    exclude={
-        'id'
-    }
-)
+class InsurancePolicyFormSerializer(Base):
+    number: int = pydantic.Field(
+        title="Номер страхового полиса"
+    )
 
 MedCardSerializer = models.MedCard.get_pydantic(
     exclude={
@@ -41,17 +57,17 @@ class PatientFormSerializer(Base):
     surname: str = pydantic.Field(
         title="Отчество",
     )
-    passport_id: int = pydantic.Field(
-        title="Паспорт"
-    )
-    insurance_id: int = pydantic.Field(
-        title="Страховой полис"
-    )
     phone_number: str = pydantic.Field(
         title="Номер телефона",
     )
     email: str = pydantic.Field(
         title="Эл. почта"
+    )
+    passport: PassportFormSerializer = pydantic.Field(
+        title="Паспорт"
+    )
+    insurance: InsurancePolicyFormSerializer = pydantic.Field(
+        title="Страховой полис"
     )
 
 
