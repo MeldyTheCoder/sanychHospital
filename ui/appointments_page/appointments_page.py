@@ -119,11 +119,11 @@ class AppointmentsPage(BasePage):
             choices={
                 'diagnosis': (
                     self.diagnoses,
-                    lambda diagnosis: diagnosis.name,
+                    lambda diagnosis: (diagnosis.id, diagnosis.name),
                 ),
                 'patient': (
                     self.patients,
-                    lambda patient: f"{patient.last_name} {patient.first_name} {patient.surname}",
+                    lambda patient: (patient.id, f"{patient.last_name} {patient.first_name} {patient.surname}"),
                 )
             },
             handle_form_submit=self.handle_create_appointment_form_submit,

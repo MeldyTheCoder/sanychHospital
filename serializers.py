@@ -28,7 +28,7 @@ class PassportFormSerializer(Base):
     date_of_birth: datetime.datetime = pydantic.Field(
         title="Дата рождения"
     )
-    gender: bool = pydantic.Field(
+    gender: models.Gender = pydantic.Field(
         title="Пол"
     )
     address: str = pydantic.Field(
@@ -38,6 +38,13 @@ class PassportFormSerializer(Base):
 class InsurancePolicyFormSerializer(Base):
     number: int = pydantic.Field(
         title="Номер страхового полиса"
+    )
+    date_of_issue: datetime.date = pydantic.Field(
+        title="Дата выдачи",
+        default=datetime.date.today()
+    )
+    date_expires: datetime.date = pydantic.Field(
+        title="Дата окончания",
     )
 
 MedCardSerializer = models.MedCard.get_pydantic(

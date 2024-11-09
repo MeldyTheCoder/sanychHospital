@@ -1,5 +1,5 @@
 import enum
-from datetime import datetime
+from datetime import datetime, date
 import ormar
 import sqlalchemy
 import databases
@@ -154,14 +154,9 @@ class MedCard(ormar.Model):
         minimum=1,
     )
 
-    number = ormar.Integer(
-        unique=True,
-        nullable=False,
-        autoincrement=True,
-    )
-
     date_of_issue = ormar.Date(
         nullable=False,
+        default=date.today(),
     )
 
 

@@ -1,9 +1,10 @@
+import typing
 from typing import Callable, Any
 
 import flet as ft
 import pydantic
 
-type RowAction = tuple[ft.Control, [Callable[[pydantic.BaseModel], None]]]
+type RowAction = tuple[ft.Control | str, [Callable[[type[pydantic.BaseModel]], typing.Any]]]
 
 
 class PydanticTable(ft.UserControl):
